@@ -1,15 +1,17 @@
 import java.util.Arrays;
 
-public class SalesManager {
-    protected int[] sales;
 
-    public SalesManager(int[] sales) {
+public class SalesManager {
+    protected long[] sales;
+
+    public SalesManager(long[] sales) {
         this.sales = sales;
+
     }
 
-    public int max() {
-        int max = -1;
-        for (int sale : sales) {
+    public long max() {
+        long max = -1;
+        for (long sale : sales) {
             if (sale > max) {
                 max = sale;
             }
@@ -18,9 +20,9 @@ public class SalesManager {
 
     }
 
-    public int min() {
-        int min = 1;
-        for (int sale : sales) {
+    public long min() {
+        long min = 1;
+        for (long sale : sales) {
             if (sale < min) {
                 min = sale;
 
@@ -28,9 +30,9 @@ public class SalesManager {
         }
         return min;
     }
-    public int averageValue () {
-        int sum = 0;
-        for (int sale : sales) {
+    public long averageValue () {
+        long sum = 0;
+        for (long sale : sales) {
             sum += sale;
         }
         return (sum - min() - max()) / (sales.length -2);
